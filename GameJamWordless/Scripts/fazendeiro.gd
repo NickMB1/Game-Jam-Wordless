@@ -1,22 +1,24 @@
 extends CharacterBody2D
-var MV_SPEED = 225
+
+var MV_SPEED = 200;
+var Seeds = 3
+var character_direction : Vector2
+
+@onready var animation_test = $Fazendeiro_Animation as AnimatedSprite2D
+
+func _enter_tree():
+	Global.Character_node = self
+
 
 func _physics_process(_delta):
-
-	var direction1 := Input.get_axis("Move_Up", "Move_Down")
-
-	if direction1:
-		velocity.y = direction1 * MV_SPEED
-
+	character_direction.x = Input.get_axis("Move_Left", "Move_Right")
+	character_direction.y = Input.get_axis("Move_Up", "Move_Down")
+	
+	if character_direction.x > 0: $Fazendeiro_Animation.flip_h = false
+	elif character_direction.x < 0: $Fazendeiro_Animation.flip_h = true
+	
+	if character_direction:
+		velocity = character_direction * MV_SPEED
 	else:
-		velocity.y = move_toward(velocity.y, 0, MV_SPEED)
-
-
-	var direction2 := Input.get_axis("Move_Left", "Move_Right")
-
-	if direction2:
-		velocity.x = direction2 * MV_SPEED
-
-	else:
-		velocity.x = move_toward(velocity.x, 0, MV_SPEED)
-		move_and_slide()
+		velocity = velocity.move_toward(Vector2.ZERO, MV_SPEED)
+	move_and_slide()
