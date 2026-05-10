@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhn2bav6vv5mq"]
+
+[ext_resource type="Script" uid="uid://cl7t8abh2olq3" path="res://fazendeiro.gd" id="1_uaowx"]
+[ext_resource type="Texture2D" uid="uid://pgsyv2b3y6vo" path="res://icon.svg" id="2_q8gsj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8gsj"]
+size = Vector2(130, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3q1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q8gsj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngogl"]
+size = Vector2(101, 96)
+
+[node name="Fazendeiro" type="CharacterBody2D"]
+position = Vector2(547, 290)
+script = ExtResource("1_uaowx")
+
+[node name="Collision_Box" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_q8gsj")
+debug_color = Color(0.896093, 0.224193, 0.568992, 0.42)
+
+[node name="Fazendeiro_Animation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g3q1o")
+frame_progress = 0.48554
+
+[node name="Fazendeiro_Collision" type="Area2D" parent="."]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Fazendeiro_Collision"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_ngogl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
