@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://hgwwedt8havg"]
+[gd_scene load_steps=10 format=4 uid="uid://hgwwedt8havg"]
 
 [ext_resource type="Texture2D" uid="uid://cjiotoq60kpvh" path="res://Assets/topDown_baseTiles.png" id="1_4oofb"]
 [ext_resource type="PackedScene" uid="uid://dhn2bav6vv5mq" path="res://Cenas/fazendeiro.tscn" id="2_wbc3m"]
+[ext_resource type="PackedScene" uid="uid://0tsihadoxpff" path="res://Cenas/coletavel_teste.tscn" id="3_twaxd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnsrh"]
 texture = ExtResource("1_4oofb")
@@ -1929,3 +1930,10 @@ tile_set = SubResource("TileSet_wbc3m")
 
 [node name="Fazendeiro" parent="." instance=ExtResource("2_wbc3m")]
 position = Vector2(576, 327)
+collision_mask = 2
+
+[node name="Coletavel teste" parent="." instance=ExtResource("3_twaxd")]
+position = Vector2(230, 300)
+scale = Vector2(2, 2)
+
+[connection signal="body_exited" from="Coletavel teste" to="Coletavel teste" method="_on_body_exited"]

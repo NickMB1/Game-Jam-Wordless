@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://0tsihadoxpff"]
+
+[ext_resource type="Texture2D" uid="uid://pgsyv2b3y6vo" path="res://Assets/icon.svg" id="1_k4l8h"]
+[ext_resource type="Script" uid="uid://dej8xpvsip1wi" path="res://Scripts/coletavel_teste.gd" id="1_knvjc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knvjc"]
+size = Vector2(5.5, 6.5)
+
+[node name="Coletavel teste" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_knvjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, -2.38419e-07)
+scale = Vector2(0.0429688, 0.0507813)
+texture = ExtResource("1_k4l8h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_knvjc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
