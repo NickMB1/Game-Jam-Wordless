@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://hgwwedt8havg"]
 
-[ext_resource type="Texture2D" uid="uid://cjiotoq60kpvh" path="res://topDown_baseTiles.png" id="1_4oofb"]
-[ext_resource type="PackedScene" uid="uid://dhn2bav6vv5mq" path="res://fazendeiro.tscn" id="2_wbc3m"]
+[ext_resource type="Texture2D" uid="uid://cjiotoq60kpvh" path="res://Assets/topDown_baseTiles.png" id="1_4oofb"]
+[ext_resource type="PackedScene" uid="uid://dhn2bav6vv5mq" path="res://Cenas/fazendeiro.tscn" id="2_wbc3m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnsrh"]
 texture = ExtResource("1_4oofb")

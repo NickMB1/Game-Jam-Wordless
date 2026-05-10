@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhn2bav6vv5mq"]
 
-[ext_resource type="Script" uid="uid://cl7t8abh2olq3" path="res://fazendeiro.gd" id="1_uaowx"]
-[ext_resource type="Texture2D" uid="uid://pgsyv2b3y6vo" path="res://icon.svg" id="2_q8gsj"]
+[ext_resource type="Script" uid="uid://cl7t8abh2olq3" path="res://Scripts/fazendeiro.gd" id="1_uaowx"]
+[ext_resource type="Texture2D" uid="uid://pgsyv2b3y6vo" path="res://Assets/icon.svg" id="2_q8gsj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8gsj"]
 size = Vector2(130, 135)
