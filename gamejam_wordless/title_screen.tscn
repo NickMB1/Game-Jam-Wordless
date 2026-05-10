@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://7bbop0q8co26"]
+[gd_scene load_steps=8 format=3 uid="uid://burt8h4y5nkwt"]
 
-[ext_resource type="Script" uid="uid://cbftt0o6gdrhv" path="res://Scripts/title_screen.gd" id="1_05l2w"]
-[ext_resource type="Texture2D" uid="uid://dbdj3wm65nmrm" path="res://BG.jpg" id="1_ak2if"]
-[ext_resource type="Texture2D" uid="uid://dvkwggubqthwm" path="res://icon.svg" id="2_ig5kc"]
-[ext_resource type="Theme" uid="uid://cqxccor4jq43t" path="res://DefaultButtons.tres" id="3_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://nc6yh72kq001" path="res://BG.jpg" id="1_ak2if"]
+[ext_resource type="Script" uid="uid://bw3frlublrkox" path="res://title_screen.gd" id="1_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://pgsyv2b3y6vo" path="res://icon.svg" id="2_ig5kc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05l2w"]
 
@@ -99,7 +98,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_05l2w")
+script = ExtResource("1_ig5kc")
 
 [node name="Bg" type="TextureRect" parent="."]
 layout_mode = 2
@@ -137,7 +136,6 @@ texture = ExtResource("2_ig5kc")
 [node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("3_ig5kc")
 text = "START"
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -147,7 +145,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_05l2w")
 [node name="Credits" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("3_ig5kc")
 text = "CREDITS"
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -157,7 +154,6 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_05l2w")
 [node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = ExtResource("3_ig5kc")
 text = "QUIT	"
 
 [node name="Img_Personagem" type="TextureRect" parent="MarginContainer/HBoxContainer"]

@@ -21,7 +21,7 @@ animations = [{
 size = Vector2(101, 96)
 
 [node name="Fazendeiro" type="CharacterBody2D"]
-position = Vector2(547, 290)
+position = Vector2(580, 328)
 script = ExtResource("1_uaowx")
 
 [node name="Collision_Box" type="CollisionShape2D" parent="."]

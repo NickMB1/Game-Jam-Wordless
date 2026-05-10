@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7j6en4janbm8"]
-
-[ext_resource type="Script" uid="uid://blseepuikgby0" path="res://Scripts/fazendeiro.gd" id="1_i65ey"]
-
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_i65ey")

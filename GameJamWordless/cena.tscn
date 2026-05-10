@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4ftkaqp2xa65"]
-
-[ext_resource type="PackedScene" uid="uid://c7j6en4janbm8" path="res://Fazendeiro.tscn" id="1_2vsai"]
-
-[node name="Cena" type="Node2D"]
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_2vsai")]
