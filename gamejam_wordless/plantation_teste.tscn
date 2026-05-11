@@ -8,6 +8,7 @@
 size = Vector2(20, 247)
 
 [node name="Plantation_teste" type="Area2D"]
+collision_layer = 2
 script = ExtResource("1_kig4k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
