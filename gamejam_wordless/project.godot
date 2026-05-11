@@ -19,6 +19,10 @@ config/icon="res://Assets/icon.svg"
 
 Global="*res://Scripts/global.gd"
 
+[global_group]
+
+Solid=""
+
 [input]
 
 Move_Up={

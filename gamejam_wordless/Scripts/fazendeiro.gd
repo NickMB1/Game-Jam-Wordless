@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
 var MV_SPEED = 200;
-var Seeds = 3
 var character_direction : Vector2
 
 @onready var animation_test = $Fazendeiro_Animation as AnimatedSprite2D
 
 func _enter_tree():
 	Global.Character_node = self
+	Global.seeds = 3
+	print(Global.seeds)
 
 
 func _physics_process(_delta):

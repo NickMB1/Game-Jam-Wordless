@@ -1,5 +1,5 @@
 extends Area2D
-var coletavel = false
+var plantavel = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,20 +8,21 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if coletavel == true:
+	if plantavel == true:
 		if Input.is_action_just_pressed("Interact"):
-			Global.seeds = Global.seeds + 1
+			Global.seeds = Global.seeds - 1
 			print(Global.seeds)
-			queue_free()
+		if Input.is_action_just_pressed("Interact") and Global.seeds == 0:
+			print("Não pode plantar")
 
 
 func _on_body_entered(body: Node2D) -> void:
-	coletavel = true
+	plantavel = true
 	print("O player colidiu")
 
 
 
 func _on_body_exited(body: Node2D) -> void:
-	coletavel = false
+	plantavel = false
 	print("O player saiu")
 	
