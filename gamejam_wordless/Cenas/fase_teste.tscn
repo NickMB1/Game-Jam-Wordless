@@ -1933,14 +1933,9 @@ tile_set = SubResource("TileSet_wbc3m")
 position = Vector2(576, 327)
 collision_mask = 2
 
-[node name="Coletavel teste" parent="." instance=ExtResource("3_twaxd")]
-position = Vector2(230, 300)
-scale = Vector2(2, 2)
-
 [node name="Plantation_teste" parent="." instance=ExtResource("4_dnan2")]
 position = Vector2(816, 149)
 
-[node name="Plantation_teste2" parent="." instance=ExtResource("4_dnan2")]
-position = Vector2(880, 149)
-
-[connection signal="body_exited" from="Coletavel teste" to="Coletavel teste" method="_on_body_exited"]
+[node name="Coletavel teste" parent="." instance=ExtResource("3_twaxd")]
+position = Vector2(230, 300)
+scale = Vector2(2, 2)

@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx12r7s5gb7nv"]
+[gd_scene load_steps=4 format=3 uid="uid://cx12r7s5gb7nv"]
 
 [ext_resource type="Script" uid="uid://cqfdf08uoqgnd" path="res://plantation_teste.gd" id="1_kig4k"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kig4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kig4k"]
 size = Vector2(20, 247)
@@ -8,7 +10,15 @@ size = Vector2(20, 247)
 [node name="Plantation_teste" type="Area2D"]
 script = ExtResource("1_kig4k")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 113.5)
+scale = Vector2(16, 245)
+texture = SubResource("CanvasTexture_kig4k")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 113.5)
 shape = SubResource("RectangleShape2D_kig4k")
 debug_color = Color(0.0627451, 0.882353, 0, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

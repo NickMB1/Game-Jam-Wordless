@@ -10,10 +10,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if plantavel == true:
 		if Input.is_action_just_pressed("Interact"):
-			Global.seeds = Global.seeds - 1
-			print(Global.seeds)
-		if Input.is_action_just_pressed("Interact") and Global.seeds == 0:
-			print("Não pode plantar")
+			if Global.seeds > 0:
+				Global.seeds = Global.seeds - 1
+				print(Global.seeds)
+			else:
+				print("Não pode plantar")
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -21,8 +22,6 @@ func _on_body_entered(body: Node2D) -> void:
 	print("O player colidiu")
 
 
-
 func _on_body_exited(body: Node2D) -> void:
 	plantavel = false
-	print("O player saiu")
-	
+	print ("O player saiu")

@@ -22,6 +22,7 @@ Global="*res://Scripts/global.gd"
 [global_group]
 
 Solid=""
+Plantation=""
 
 [input]
 
