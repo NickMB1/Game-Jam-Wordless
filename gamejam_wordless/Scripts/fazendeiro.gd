@@ -8,7 +8,8 @@ var character_direction : Vector2
 func _enter_tree():
 	Global.Character_node = self
 	Global.seeds = 3
-	print(Global.seeds)
+	print("Sementes Iniciais: ",Global.seeds)
+	print("Plantas Iniciais: ", Global.plantas)
 
 
 func _physics_process(_delta):

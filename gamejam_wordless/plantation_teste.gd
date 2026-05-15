@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("Interact"):
 			if Global.seeds > 0:
 				Global.seeds = Global.seeds - 1
-				print(Global.seeds)
+				print("Sementes: ", Global.seeds)
+				$Timer_Planta.start()
 			else:
 				print("Não pode plantar")
 
@@ -25,3 +26,8 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	plantavel = false
 	print ("O player saiu")
+
+
+func _on_timer_planta_timeout() -> void:
+	Global.plantas = Global.plantas + 1
+	print("Plantas: ", Global.plantas)
