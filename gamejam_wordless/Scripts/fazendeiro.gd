@@ -7,15 +7,16 @@ var character_direction : Vector2
 
 @export var inventory: Inventory
 
-func _on_hurt_box_area_entered(area):
-	if area.has.method("collect"):
-		area.collect(inventory)
-
 func _enter_tree():
 	Global.Character_node = self
 	Global.seeds = 3
 	print("Sementes Iniciais: ",Global.seeds)
 	print("Plantas Iniciais: ", Global.plantas)
+
+
+func _on_fazendeiro_collision_area_entered(area):
+	if area.has_method("collect"):
+		area.collect(inventory)
 
 
 func _physics_process(_delta):
