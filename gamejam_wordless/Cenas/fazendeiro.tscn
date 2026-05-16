@@ -38,6 +38,8 @@ frame_progress = 0.48554
 [node name="Fazendeiro_Collision" type="Area2D" parent="."]
 
 [node name="Hurtbox" type="CollisionShape2D" parent="Fazendeiro_Collision"]
+[node name="Hurtbox" type="CollisionShape2D" parent="Fazendeiro_Collision" groups=["Solid"]]
+position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_ngogl")
 
 [node name="Camera2D" type="Camera2D" parent="."]

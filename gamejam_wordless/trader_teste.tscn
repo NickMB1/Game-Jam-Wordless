@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://0xafgjcalm7a"]
+
+[ext_resource type="Script" uid="uid://cpgevw7r2oy1c" path="res://trader_teste.gd" id="1_1ptv0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mea6"]
+size = Vector2(532, 224)
+
+[node name="Trader_Teste" type="Area2D"]
+script = ExtResource("1_1ptv0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(256, 102)
+shape = SubResource("RectangleShape2D_4mea6")
+debug_color = Color(0.715986, 0.487088, 0.0678751, 0.690196)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

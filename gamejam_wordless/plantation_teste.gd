@@ -1,12 +1,6 @@
 extends Area2D
-var coletavel = false
+var plantavel = false
 
-@export var itemRes: InventoryItem
-
-func collect(inventory: Inventory):
-	if coletavel == true:
-		inventory.insert(itemRes)
-		queue_free()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -14,20 +8,26 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	if coletavel == true:
+	if plantavel == true:
 		if Input.is_action_just_pressed("Interact"):
-			Global.seeds = Global.seeds + 1
-			print("Sementes: ", Global.seeds)
-			queue_free()
+			if Global.seeds > 0:
+				Global.seeds = Global.seeds - 1
+				print("Sementes: ", Global.seeds)
+				$Timer_Planta.start()
+			else:
+				print("Não pode plantar")
 
 
 func _on_body_entered(body: Node2D) -> void:
-	coletavel = true
+	plantavel = true
 	print("O player colidiu")
 
 
-
 func _on_body_exited(body: Node2D) -> void:
-	coletavel = false
-	print("O player saiu")
+	plantavel = false
+	print ("O player saiu")
+
+
+func _on_timer_planta_timeout() -> void:
+	Global.plantas = Global.plantas + 1
+	print("Plantas: ", Global.plantas)
