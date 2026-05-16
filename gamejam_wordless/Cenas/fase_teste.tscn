@@ -1943,7 +1943,7 @@ collision_mask = 3
 position = Vector2(816, 149)
 
 [node name="Coletavel teste" parent="." instance=ExtResource("4_md0x5")]
-position = Vector2(230, 300)
+position = Vector2(223, 206)
 scale = Vector2(2, 2)
 
 [node name="Trader_Teste" parent="." instance=ExtResource("5_yj0h4")]
@@ -1964,3 +1964,7 @@ offset_top = -231.0
 offset_right = -220.0
 offset_bottom = -141.0
 scale = Vector2(5, 5)
+
+[node name="Coletavel teste2" parent="." instance=ExtResource("4_md0x5")]
+position = Vector2(226, 403)
+scale = Vector2(2, 2)
