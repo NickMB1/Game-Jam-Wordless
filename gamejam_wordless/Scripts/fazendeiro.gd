@@ -6,6 +6,12 @@ var character_direction : Vector2
 
 @onready var animation_test = $Fazendeiro_Animation as AnimatedSprite2D
 
+@export var inventory: Inventory
+
+func _on_hurt_box_area_entered(area):
+	if area.has.method("collect"):
+		area.collect(inventory)
+
 func _enter_tree():
 	Global.Character_node = self
 
@@ -22,3 +28,4 @@ func _physics_process(_delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, MV_SPEED)
 	move_and_slide()
+	

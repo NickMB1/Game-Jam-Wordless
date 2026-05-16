@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://hgwwedt8havg"]
+[gd_scene load_steps=13 format=4 uid="uid://hgwwedt8havg"]
 
 [ext_resource type="Texture2D" uid="uid://cjiotoq60kpvh" path="res://Assets/topDown_baseTiles.png" id="1_4oofb"]
 [ext_resource type="PackedScene" uid="uid://dhn2bav6vv5mq" path="res://Cenas/fazendeiro.tscn" id="2_wbc3m"]
 [ext_resource type="PackedScene" uid="uid://0tsihadoxpff" path="res://Cenas/coletavel_teste.tscn" id="3_twaxd"]
+[ext_resource type="Script" uid="uid://c22shcoxtw0x0" path="res://Scripts/canvas_layer.gd" id="4_56dsj"]
+[ext_resource type="Resource" uid="uid://vo8xe0bksr88" path="res://Inventario/ColetaveTeste.tres" id="4_pyjhj"]
+[ext_resource type="PackedScene" uid="uid://crphelxcmixbq" path="res://Cenas/inventory.tscn" id="5_pyjhj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnsrh"]
 texture = ExtResource("1_4oofb")
@@ -1932,8 +1935,25 @@ tile_set = SubResource("TileSet_wbc3m")
 position = Vector2(576, 327)
 collision_mask = 2
 
-[node name="Coletavel teste" parent="." instance=ExtResource("3_twaxd")]
+[node name="Coletavel teste" parent="." groups=["Items"] instance=ExtResource("3_twaxd")]
 position = Vector2(230, 300)
 scale = Vector2(2, 2)
+itemRes = ExtResource("4_pyjhj")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_56dsj")
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("5_pyjhj")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.491
+anchor_right = 0.5
+anchor_bottom = 0.491
+offset_left = -437.0
+offset_top = -275.168
+offset_right = -293.0
+offset_bottom = -185.168
+scale = Vector2(6, 6)
+
+[connection signal="body_entered" from="Coletavel teste" to="Fazendeiro" method="_on_coletavel_teste_body_entered"]
 [connection signal="body_exited" from="Coletavel teste" to="Coletavel teste" method="_on_body_exited"]

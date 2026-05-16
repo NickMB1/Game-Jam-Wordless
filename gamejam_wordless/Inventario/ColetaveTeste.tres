@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://vo8xe0bksr88"]
+
+[ext_resource type="Script" uid="uid://ceobxi3u22l5u" path="res://Scripts/inventoryItem.gd" id="1_bqwao"]
+[ext_resource type="Texture2D" uid="uid://pgsyv2b3y6vo" path="res://Assets/icon.svg" id="2_3vc3p"]
+
+[resource]
+script = ExtResource("1_bqwao")
+name = "ColetavelTeste"
+texture = ExtResource("2_3vc3p")
+metadata/_custom_type_script = "uid://ceobxi3u22l5u"
