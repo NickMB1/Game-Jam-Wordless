@@ -18,9 +18,7 @@ func _process(delta: float) -> void:
 				print("Sementes: ", Global.seeds)
 				ocupado = true
 				$Timer_Planta.start()
-				
 			if sprite.texture == CenouraCrescida:
-				Global.plantas = Global.plantas + 1
 				sprite.texture = null
 				ocupado = false
 			else:

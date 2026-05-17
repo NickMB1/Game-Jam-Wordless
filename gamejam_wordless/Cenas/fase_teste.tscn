@@ -1,13 +1,14 @@
-[gd_scene load_steps=16 format=4 uid="uid://dl05e5sit4pgm"]
+[gd_scene load_steps=17 format=4 uid="uid://ci63if0qof3lj"]
 
 [ext_resource type="Texture2D" uid="uid://cjiotoq60kpvh" path="res://Assets/topDown_baseTiles.png" id="1_56dsj"]
 [ext_resource type="Texture2D" uid="uid://djhjti8owpl0q" path="res://Assets/Background.png" id="2_md0x5"]
-[ext_resource type="PackedScene" uid="uid://dhn2bav6vv5mq" path="res://Cenas/fazendeiro.tscn" id="2_pyjhj"]
+[ext_resource type="PackedScene" uid="uid://bxuppc0v7jq1n" path="res://Cenas/fazendeiro.tscn" id="2_pyjhj"]
 [ext_resource type="PackedScene" uid="uid://cx12r7s5gb7nv" path="res://plantation_teste.tscn" id="3_2limu"]
 [ext_resource type="PackedScene" uid="uid://cpatqfx4orxa2" path="res://Cenas/cenoura.tscn" id="5_md0x5"]
 [ext_resource type="PackedScene" uid="uid://0xafgjcalm7a" path="res://trader_teste.tscn" id="5_yj0h4"]
-[ext_resource type="Script" uid="uid://c22shcoxtw0x0" path="res://Scripts/canvas_layer.gd" id="6_2limu"]
-[ext_resource type="PackedScene" uid="uid://crphelxcmixbq" path="res://Cenas/inventory.tscn" id="6_pyjhj"]
+[ext_resource type="Script" uid="uid://c22shcoxtw0x0" path="res://Scripts/canvas_layer.gd" id="7_md0x5"]
+[ext_resource type="PackedScene" uid="uid://crphelxcmixbq" path="res://Cenas/inventory.tscn" id="8_yj0h4"]
+[ext_resource type="PackedScene" uid="uid://cbsl38hhkrlls" path="res://trader_Tela.tscn" id="9_yj0h4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnsrh"]
 texture = ExtResource("1_56dsj")
@@ -2514,7 +2515,7 @@ tile_set = SubResource("TileSet_vnsrh")
 tile_set = SubResource("TileSet_wbc3m")
 
 [node name="Fazendeiro" parent="Tilemap" instance=ExtResource("2_pyjhj")]
-position = Vector2(576, 327)
+position = Vector2(579, 370)
 collision_layer = 3
 collision_mask = 3
 
@@ -2625,15 +2626,12 @@ position = Vector2(369, 251)
 
 [node name="Cenoura" parent="Items" instance=ExtResource("5_md0x5")]
 position = Vector2(542, 332)
-[node name="Coletavel teste" parent="." instance=ExtResource("4_md0x5")]
-position = Vector2(223, 206)
 scale = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("6_2limu")
+script = ExtResource("7_md0x5")
 
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("6_pyjhj")]
-visible = false
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("8_yj0h4")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2645,6 +2643,18 @@ offset_right = -220.0
 offset_bottom = -141.0
 scale = Vector2(5, 5)
 
-[node name="Coletavel teste2" parent="." instance=ExtResource("4_md0x5")]
-position = Vector2(226, 403)
-scale = Vector2(2, 2)
+[node name="Trader" parent="CanvasLayer" instance=ExtResource("9_yj0h4")]
+custom_minimum_size = Vector2(144, 90)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -362.0
+offset_top = -212.0
+offset_right = -218.0
+offset_bottom = -122.0
+scale = Vector2(5, 5)
+
+[connection signal="body_entered" from="trader/Trader_Teste" to="CanvasLayer" method="_on_trader_teste_body_entered"]
+[connection signal="body_exited" from="trader/Trader_Teste" to="CanvasLayer" method="_on_trader_teste_body_exited"]

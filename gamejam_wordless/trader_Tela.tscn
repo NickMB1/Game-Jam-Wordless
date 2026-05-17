@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbsl38hhkrlls"]
+
+[ext_resource type="Texture2D" uid="uid://cfb4yyedfdr0b" path="res://Assets/InventoryRect.png" id="1_8jvj7"]
+[ext_resource type="Script" uid="uid://c4ro0tpj7xvsk" path="res://Scripts/trader_tela.gd" id="1_vheyh"]
+[ext_resource type="PackedScene" uid="uid://ba770fq3obmxj" path="res://Cenas/slot_trader1.tscn" id="2_lkpgi"]
+[ext_resource type="PackedScene" uid="uid://b3sboux87la0" path="res://Cenas/slot_trader2.tscn" id="3_vheyh"]
+[ext_resource type="Texture2D" uid="uid://b1arfixgoi86v" path="res://Assets/Setas.png" id="4_wr5f4"]
+
+[node name="Trader" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vheyh")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_top = -5.0
+offset_right = 145.0
+offset_bottom = 87.0
+texture = ExtResource("1_8jvj7")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Slot give" parent="NinePatchRect" instance=ExtResource("2_lkpgi")]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 34.0
+offset_right = 48.0
+offset_bottom = 54.0
+
+[node name="Slot_Trader" parent="NinePatchRect" instance=ExtResource("3_vheyh")]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 48.0
+offset_right = 117.0
+offset_bottom = 68.0
+
+[node name="Slot_Trader1" parent="NinePatchRect" instance=ExtResource("3_vheyh")]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 20.0
+offset_right = 117.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 35.0
+offset_right = 101.0
+offset_bottom = 75.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_wr5f4")
+
+[connection signal="pressed" from="NinePatchRect/Button" to="." method="_on_button_pressed"]

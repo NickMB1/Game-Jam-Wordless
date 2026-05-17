@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mea6"]
 size = Vector2(108, 100)
 
-[node name="Trader_Teste" type="Area2D"]
+[node name="Trader_Area" type="Area2D"]
 script = ExtResource("1_1ptv0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
