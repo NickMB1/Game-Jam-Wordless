@@ -2625,6 +2625,8 @@ position = Vector2(369, 251)
 
 [node name="Cenoura" parent="Items" instance=ExtResource("5_md0x5")]
 position = Vector2(542, 332)
+[node name="Coletavel teste" parent="." instance=ExtResource("4_md0x5")]
+position = Vector2(223, 206)
 scale = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -2642,3 +2644,7 @@ offset_top = -231.0
 offset_right = -220.0
 offset_bottom = -141.0
 scale = Vector2(5, 5)
+
+[node name="Coletavel teste2" parent="." instance=ExtResource("4_md0x5")]
+position = Vector2(226, 403)
+scale = Vector2(2, 2)

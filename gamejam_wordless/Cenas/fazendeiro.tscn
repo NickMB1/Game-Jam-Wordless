@@ -1,4 +1,5 @@
 [gd_scene load_steps=10 format=3 uid="uid://dhn2bav6vv5mq"]
+[gd_scene load_steps=7 format=3 uid="uid://dhn2bav6vv5mq"]
 
 [ext_resource type="Script" uid="uid://cl7t8abh2olq3" path="res://Scripts/fazendeiro.gd" id="1_uaowx"]
 [ext_resource type="Resource" uid="uid://dh48w5qqmmtym" path="res://Inventario/PlayerInventario.tres" id="2_y1pof"]
@@ -10,6 +11,7 @@
 size = Vector2(17, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uls1l"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3q1o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -36,6 +38,11 @@ size = Vector2(17, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngogl"]
 size = Vector2(17, 17)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8gsj"]
+size = Vector2(57, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngogl"]
+size = Vector2(48, 53)
 
 [node name="Fazendeiro" type="CharacterBody2D"]
 position = Vector2(580, 328)
@@ -54,6 +61,16 @@ sprite_frames = SubResource("SpriteFrames_uls1l")
 animation = &"Andar"
 autoplay = "default"
 frame_progress = 0.638048
+[node name="Fazendeiro_Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(-11.75, -12.5)
+scale = Vector2(0.472656, 0.476563)
+sprite_frames = SubResource("SpriteFrames_g3q1o")
+frame_progress = 0.48554
+
+[node name="Collision_Box" type="CollisionShape2D" parent="."]
+position = Vector2(-11.5, -13)
+shape = SubResource("RectangleShape2D_q8gsj")
+debug_color = Color(0.896093, 0.224193, 0.568992, 0.42)
 
 [node name="Fazendeiro_Collision" type="Area2D" parent="."]
 collision_mask = 2
@@ -64,9 +81,10 @@ shape = SubResource("RectangleShape2D_y1pof")
 
 [node name="Hurtbox2" type="CollisionShape2D" parent="Fazendeiro_Collision" groups=["Solid"]]
 position = Vector2(-0.5, -0.5)
+[node name="Hurtbox2" type="CollisionShape2D" parent="Fazendeiro_Collision" groups=["Solid"]]
+position = Vector2(-12, -13)
 shape = SubResource("RectangleShape2D_ngogl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
 
 [connection signal="area_entered" from="Fazendeiro_Collision" to="." method="_on_fazendeiro_collision_area_entered"]

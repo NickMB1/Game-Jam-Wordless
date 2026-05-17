@@ -9,7 +9,7 @@ var character_direction : Vector2
 
 func _enter_tree():
 	Global.Character_node = self
-	Global.seeds = 3
+	Global.seeds = 0
 	print("Sementes Iniciais: ",Global.seeds)
 	print("Plantas Iniciais: ", Global.plantas)
 
