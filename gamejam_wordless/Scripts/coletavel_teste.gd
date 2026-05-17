@@ -3,7 +3,8 @@ var coletavel = false
 
 @export var itemRes: InventoryItem
 
-func collect(inventory: Inventory):	
+
+func collect(inventory: Inventory):
 	inventory.insert(itemRes)
 	Global.seeds = Global.seeds + 1
 	print("Sementes: ", Global.seeds)

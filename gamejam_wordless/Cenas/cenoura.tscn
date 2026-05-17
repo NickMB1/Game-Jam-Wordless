@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpatqfx4orxa2"]
+
+[ext_resource type="PackedScene" uid="uid://0tsihadoxpff" path="res://Cenas/coletavel_teste.tscn" id="1_cn10n"]
+[ext_resource type="Texture2D" uid="uid://bw5ryv6v3wobc" path="res://Assets/BrotoCenoura.png" id="2_cn10n"]
+[ext_resource type="Script" uid="uid://okths0jghi8d" path="res://Scripts/cenoura.gd" id="2_dnhsn"]
+[ext_resource type="Resource" uid="uid://cxkjngjdf8ku4" path="res://Inventario/SementeCenoura.tres" id="3_j1icw"]
+
+[node name="SementeCenoura" instance=ExtResource("1_cn10n")]
+script = ExtResource("2_dnhsn")
+itemRes = ExtResource("3_j1icw")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(0.133333, 0.190476)
+texture = ExtResource("2_cn10n")

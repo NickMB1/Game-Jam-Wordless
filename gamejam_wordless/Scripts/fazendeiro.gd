@@ -23,8 +23,8 @@ func _physics_process(_delta):
 	character_direction.x = Input.get_axis("Move_Left", "Move_Right")
 	character_direction.y = Input.get_axis("Move_Up", "Move_Down")
 	
-	if character_direction.x > 0: $Fazendeiro_Animation.flip_h = false
-	elif character_direction.x < 0: $Fazendeiro_Animation.flip_h = true
+	if character_direction.x < 0: $Fazendeiro_Animation.flip_h = false
+	elif character_direction.x > 0: $Fazendeiro_Animation.flip_h = true
 	
 	if character_direction:
 		velocity = character_direction * MV_SPEED
@@ -32,3 +32,7 @@ func _physics_process(_delta):
 		velocity = velocity.move_toward(Vector2.ZERO, MV_SPEED)
 	move_and_slide()
 	
+	if velocity:
+		animation_test.play("Andar")
+	if !velocity:
+		animation_test.play("default")

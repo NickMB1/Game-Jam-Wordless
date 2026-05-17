@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://vo8xe0bksr88" path="res://Inventario/ColetaveTeste.tres" id="2_e8e70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knvjc"]
-size = Vector2(5.5, 6.5)
+size = Vector2(6, 4)
 
 [node name="Coletavel teste" type="Area2D"]
 collision_layer = 2

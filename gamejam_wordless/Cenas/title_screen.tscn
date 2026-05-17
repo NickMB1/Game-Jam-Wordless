@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://burt8h4y5nkwt"]
+[gd_scene load_steps=10 format=3 uid="uid://burt8h4y5nkwt"]
 
 [ext_resource type="Script" uid="uid://bw3frlublrkox" path="res://Scripts/title_screen.gd" id="1_848dy"]
-[ext_resource type="Texture2D" uid="uid://nc6yh72kq001" path="res://Assets/BG.jpg" id="2_147ya"]
+[ext_resource type="Texture2D" uid="uid://djhjti8owpl0q" path="res://Assets/Background.png" id="2_147ya"]
 [ext_resource type="Texture2D" uid="uid://pgsyv2b3y6vo" path="res://Assets/icon.svg" id="3_jtjwa"]
 [ext_resource type="Theme" uid="uid://cqxccor4jq43t" path="res://DefaultButtons.tres" id="4_l05ng"]
+[ext_resource type="Texture2D" uid="uid://c3e25guep2yuw" path="res://Assets/CharacterSprite.png" id="5_jtjwa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05l2w"]
 
@@ -163,7 +164,7 @@ text = "QUIT	"
 [node name="Img_Personagem" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_jtjwa")
+texture = ExtResource("5_jtjwa")
 expand_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

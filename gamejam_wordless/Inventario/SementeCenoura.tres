@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cxkjngjdf8ku4"]
+
+[ext_resource type="Script" uid="uid://ceobxi3u22l5u" path="res://Scripts/inventoryItem.gd" id="1_h0pjf"]
+[ext_resource type="Texture2D" uid="uid://bw5ryv6v3wobc" path="res://Assets/BrotoCenoura.png" id="2_s5gg2"]
+
+[resource]
+script = ExtResource("1_h0pjf")
+name = "Semente Cenoura"
+texture = ExtResource("2_s5gg2")
+metadata/_custom_type_script = "uid://ceobxi3u22l5u"

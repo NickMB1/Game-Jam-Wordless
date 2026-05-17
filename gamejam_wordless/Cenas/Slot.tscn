@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dludrhrjcncki" path="res://Assets/inventorySlot.png" id="1_0hlab"]
 [ext_resource type="Script" uid="uid://b6nv8vrdr5yd6" path="res://Scripts/slot.gd" id="1_6nnfm"]
-[ext_resource type="Texture2D" uid="uid://pgsyv2b3y6vo" path="res://Assets/icon.svg" id="3_g321p"]
+[ext_resource type="Texture2D" uid="uid://bw5ryv6v3wobc" path="res://Assets/BrotoCenoura.png" id="3_g321p"]
 
 [node name="Slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -26,5 +26,6 @@ offset_bottom = 20.0
 layout_mode = 2
 
 [node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
-scale = Vector2(0.1, 0.1)
+position = Vector2(2.38419e-07, 9.53674e-07)
+scale = Vector2(0.355556, 0.761905)
 texture = ExtResource("3_g321p")

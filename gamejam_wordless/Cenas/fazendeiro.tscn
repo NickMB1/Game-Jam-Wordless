@@ -1,28 +1,41 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhn2bav6vv5mq"]
+[gd_scene load_steps=10 format=3 uid="uid://dhn2bav6vv5mq"]
 
 [ext_resource type="Script" uid="uid://cl7t8abh2olq3" path="res://Scripts/fazendeiro.gd" id="1_uaowx"]
-[ext_resource type="Texture2D" uid="uid://pgsyv2b3y6vo" path="res://Assets/icon.svg" id="2_q8gsj"]
 [ext_resource type="Resource" uid="uid://dh48w5qqmmtym" path="res://Inventario/PlayerInventario.tres" id="2_y1pof"]
+[ext_resource type="Texture2D" uid="uid://eufpvjvcevhj" path="res://Assets/CharacterAnimationSprite2.png" id="3_nnyvi"]
+[ext_resource type="Texture2D" uid="uid://c3e25guep2yuw" path="res://Assets/CharacterSprite.png" id="3_y1pof"]
+[ext_resource type="Texture2D" uid="uid://bfqjo6raso8e3" path="res://Assets/CharacterAnimationSprite1.png" id="4_2rdkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8gsj"]
-size = Vector2(34, 34)
+size = Vector2(17, 17)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_g3q1o"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uls1l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_q8gsj")
+"texture": ExtResource("3_nnyvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2rdkc")
+}],
+"loop": true,
+"name": &"Andar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y1pof")
 }],
 "loop": true,
 "name": &"default",
-"speed": 1.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1pof"]
-size = Vector2(36, 34)
+size = Vector2(17, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngogl"]
-size = Vector2(36, 34)
+size = Vector2(17, 17)
 
 [node name="Fazendeiro" type="CharacterBody2D"]
 position = Vector2(580, 328)
@@ -31,22 +44,26 @@ script = ExtResource("1_uaowx")
 inventory = ExtResource("2_y1pof")
 
 [node name="Collision_Box" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_q8gsj")
 debug_color = Color(0.896093, 0.224193, 0.568992, 0.42)
 
 [node name="Fazendeiro_Animation" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.289063, 0.28125)
-sprite_frames = SubResource("SpriteFrames_g3q1o")
-frame_progress = 0.48554
+sprite_frames = SubResource("SpriteFrames_uls1l")
+animation = &"Andar"
+autoplay = "default"
+frame_progress = 0.638048
 
 [node name="Fazendeiro_Collision" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="Hurtbox" type="CollisionShape2D" parent="Fazendeiro_Collision"]
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_y1pof")
 
 [node name="Hurtbox2" type="CollisionShape2D" parent="Fazendeiro_Collision" groups=["Solid"]]
-position = Vector2(-1, 1)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_ngogl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
